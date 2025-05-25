@@ -83,3 +83,10 @@ app.post("/api/secure", function (req, res) {
 
 module.exports = app;
 
+// Solo iniciar el servidor si no está siendo importado (como lo hace Vercel)
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`Servidor local corriendo en http://localhost:${PORT}`);
+  });
+}
