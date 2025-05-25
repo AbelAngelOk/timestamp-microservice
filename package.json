@@ -4,7 +4,8 @@
   "description": "An FCC Backend Challenge",
   "main": "index.js",
   "scripts": {
-    "start": "node local.js"
+    "local": "node local.js",
+    "start": "node api/index.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
