@@ -1,28 +1,88 @@
 <!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Timestamp Microservice | freeCodeCamp.org</title>
+    <link rel="shortcut icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+  </head>
 
-<html>
-   <head>
-      <title>Timestamp Microservice | freeCodeCamp.org</title>
-      <link rel="shortcut icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png" type="image/x-icon"/>
-      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-      <link href="style.css" rel="stylesheet" type="text/css">
-   </head>
-
-   <body>
+  <body>
     <h1>Timestamp Microservice</h1>
     <hr />
-    <div class="container">
-      <h2>Example Usage:</h2>
-      <ul>
-        <li><a href="api/2015-12-25">[project url]/api/2015-12-25</a></li>
-        <li><a href="api/1451001600000">[project url]/api/1451001600000</a></li>
-      </ul>
 
-      <h2>Example Output:</h2>
-      <p>
-        <code>{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}</code>
-      </p>
+    <div class="container">
+      <h2>Endpoints disponibles</h2>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Método</th>
+              <th>Ruta</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>GET</code></td>
+              <td><a href="/api"><code>/api</code></a></td>
+              <td>Devuelve la fecha y hora actuales en formato Unix y UTC.</td>
+            </tr>
+            <tr>
+              <td><code>GET</code></td>
+              <td><a href="/api/2015-12-25"><code>/api/2015-12-25</code></a></td>
+              <td>Devuelve la fecha enviada en formato ISO.</td>
+            </tr>
+            <tr>
+              <td><code>GET</code></td>
+              <td><a href="/api/1451001600000"><code>/api/1451001600000</code></a></td>
+              <td>Devuelve la fecha correspondiente al timestamp Unix enviado.</td>
+            </tr>
+            <tr>
+              <td><code>POST</code></td>
+              <td><code>/api/secure</code></td>
+              <td>Devuelve una fecha a partir de un JSON con año, mes, día y opcionalmente hora, minuto y segundo.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Ejemplo de cuerpo JSON para POST</h2>
+      <pre>{
+  "año": 2025,
+  "mes": 5,
+  "día": 25,
+  "hora": 14,
+  "minuto": 30,
+  "segundo": 0
+}</pre>
+      <p><strong>Nota:</strong> Los campos <code>hora</code>, <code>minuto</code> y <code>segundo</code> son opcionales.</p>
+
+      <h2>Ejemplo de salida</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Formato</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>unix</td>
+              <td><code>1451001600000</code></td>
+            </tr>
+            <tr>
+              <td>utc</td>
+              <td><code>Fri, 25 Dec 2015 00:00:00 GMT</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+
     <div class="footer">
       <p>
         By <a href="https://www.freecodecamp.org/">freeCodeCamp.org</a>
