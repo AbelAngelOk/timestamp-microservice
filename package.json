@@ -4,11 +4,12 @@
   "description": "An FCC Backend Challenge",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node local.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "serverless-http": "^3.2.0"
   },
   "repository": {
     "type": "git",
